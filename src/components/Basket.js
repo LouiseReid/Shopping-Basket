@@ -3,12 +3,13 @@ import BasketItem from './BasketItem';
 
 class Basket extends React.Component {
 
+
   render(){
 
     if(!this.props.items) return null;
 
     const products = this.props.items.map((product, index) =>{
-      return <BasketItem product={product} key={index} />
+      return <BasketItem product={product} key={index} remove={this.props.removeItem}/>
     })
 
     return(

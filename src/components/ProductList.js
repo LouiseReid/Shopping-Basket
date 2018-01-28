@@ -1,17 +1,34 @@
 import React from 'react';
 import Product from './Product';
 import Basket from './Basket';
+import update from 'react-addons-update';
 
 class ProductList extends React.Component {
   state = {
-    selectedProducts: []
+    selectedProducts: [],
+    basketTotal: 0
   }
 
   addToBasket(product){
     this.setState({
-      selectedProducts: [...this.state.selectedProducts, product]
+      selectedProducts: [...this.state.selectedProducts, product],
+      basketTotal: this.state.basketTotal + product.price
     })
   }
+
+  removeProduct(index) {
+    this.setState(prevState => ({
+      selectedProducts: update(prevState.selectedProducts, {$splice: [[index, 1]]})
+    }))
+  }
+
+  // amendTotal(){
+  //
+  //   })
+  //   this.setState(prevState =>{
+  //     return {basketTotal: prevState.basketTotal + total}
+  //   })
+  // }
 
 
   render(){
@@ -28,7 +45,8 @@ class ProductList extends React.Component {
           {products}
         </div>
         <div>
-          <Basket items={this.state.selectedProducts}/>
+          <Basket items={this.state.selectedProducts} removeItem={this.removeProduct.bind(this)}/>
+          <p>{this.state.basketTotal}</p>
         </div>
       </React.Fragment>
 
