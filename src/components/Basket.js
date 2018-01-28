@@ -7,16 +7,13 @@ class Basket extends React.Component {
 
     if(!this.props.items) return null;
 
-    const products = this.props.items.map((product) =>{
-      return <BasketItem product={product} key={product.id} />
+    const products = this.props.items.map((product, index) =>{
+      return <BasketItem product={product} key={index} />
     })
 
     return(
       <div>
         {products}
-        <p>basket item</p>
-        <p>basket item</p>
-        <p>basket item</p>
       </div>
     )
   }

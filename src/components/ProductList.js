@@ -1,5 +1,6 @@
 import React from 'react';
 import Product from './Product';
+import Basket from './Basket';
 
 class ProductList extends React.Component {
   state = {
@@ -22,9 +23,15 @@ class ProductList extends React.Component {
     })
 
     return(
-      <div>
-        {products}
-      </div>
+      <React.Fragment>
+        <div>
+          {products}
+        </div>
+        <div>
+          <Basket items={this.state.selectedProducts}/>
+        </div>
+      </React.Fragment>
+
     )
   }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const BasketItem = (props) => {
   return(
-    <p>test</p>
+    <p>{props.product.item}</p>
   )
 }
 
