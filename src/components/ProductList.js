@@ -16,19 +16,11 @@ class ProductList extends React.Component {
     })
   }
 
-  removeProduct(index) {
+  removeProduct(product, index) {
     this.setState(prevState => ({
-      selectedProducts: update(prevState.selectedProducts, {$splice: [[index, 1]]})
+      selectedProducts: update(prevState.selectedProducts, {$splice: [[product, index, 1]]}),
     }))
   }
-
-  // amendTotal(){
-  //
-  //   })
-  //   this.setState(prevState =>{
-  //     return {basketTotal: prevState.basketTotal + total}
-  //   })
-  // }
 
 
   render(){
