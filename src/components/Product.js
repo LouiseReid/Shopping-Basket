@@ -11,6 +11,8 @@ class Product extends React.Component {
         item: item,
         price: price
       }
+    }, function(){
+      this.props.selected(this.state.selectedProduct)
     })
   }
 
@@ -18,7 +20,7 @@ class Product extends React.Component {
   render(){
     let item = this.props.product.item;
     let price = this.props.product.price;
-    
+
     return (
       <div>
         <p>{this.props.product.item}</p>

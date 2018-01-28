@@ -3,11 +3,13 @@ import Product from './Product';
 
 class ProductList extends React.Component {
   state = {
-    selectedProduct: this.props.basket
+    selectedProducts: []
   }
 
-  addToBasket(){
-
+  addToBasket(product){
+    this.setState({
+      selectedProducts: product
+    })
   }
 
 
