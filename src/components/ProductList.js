@@ -8,7 +8,7 @@ class ProductList extends React.Component {
 
   addToBasket(product){
     this.setState({
-      selectedProducts: product
+      selectedProducts: [...this.state.selectedProducts, product]
     })
   }
 
