@@ -2,15 +2,6 @@ import React from 'react';
 import BasketItem from './BasketItem';
 
 class Basket extends React.Component {
-  state = {
-    currency: []
-  }
-
-  componentDidMount() {
-      fetch('http://apilayer.net/api/live?access_key=670432a506f39d4c9f17e7debcf474c9&currencies=AUD,EUR,GBP,PLN&format=1')
-      .then(res => res.json())
-      .then(currency => this.setState({ currency }));
-    }
 
   render(){
 
@@ -21,9 +12,9 @@ class Basket extends React.Component {
     })
 
     return(
-      <div>
-        {products}
-      </div>
+        <div>
+          {products}
+        </div>
     )
   }
 }
