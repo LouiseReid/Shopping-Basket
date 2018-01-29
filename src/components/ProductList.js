@@ -71,7 +71,7 @@ class ProductList extends React.Component {
         </div>
         <div>
           <Basket items={this.state.selectedProducts} removeItem={this.removeProduct.bind(this)} currency={this.state.currency}/>
-          <p>{this.state.basketTotal}</p>
+          <p>{this.state.basketTotal.toFixed(2)}</p>
           <button onClick={this.setAUD.bind(this)}>AUD</button>
           <button onClick={this.setEUR.bind(this)}>EUR</button>
           <button onClick={this.setGPB.bind(this)}>GPB</button>

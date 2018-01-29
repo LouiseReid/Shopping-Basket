@@ -1,0 +1,14 @@
+.basket-item-description {
+  padding: 0;
+}
+
+.basketitem {
+  display: flex;
+}
+
+.remove-button {
+  background-color: red;
+  height: 80%;
+  align-self: center;
+  margin-left: 10px;
+}

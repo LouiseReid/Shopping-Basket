@@ -1,5 +1,7 @@
 import React from 'react';
 import BasketItem from './BasketItem';
+import '../stylesheets/basket.css';
+
 
 class Basket extends React.Component {
 
@@ -12,7 +14,7 @@ class Basket extends React.Component {
     })
 
     return(
-        <div>
+        <div className="basket">
           {products}
         </div>
     )
