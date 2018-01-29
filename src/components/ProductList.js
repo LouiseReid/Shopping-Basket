@@ -22,20 +22,19 @@ class ProductList extends React.Component {
     this.setState({
       selectedProducts: [...this.state.selectedProducts, product],
       basketTotal: this.state.basketTotal + product.price
-    })
+    });
   }
 
   removeProduct(index) {
     this.setState(prevState => ({
       selectedProducts: update(prevState.selectedProducts, {$splice: [[index, 1]]}),
-    }))
+    }));
   }
 
-
   setEUR(){
-    this.setState({
-      basketTotal: this.state.basketTotal * this.state.currency.quotes.USDEUR
-    })
+      this.setState({
+        basketTotal: this.state.basketTotal * this.state.currency.quotes.USDEUR
+      })
   }
 
   setAUD(){

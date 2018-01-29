@@ -1,9 +1,21 @@
 import React from 'react';
 import BasketItem from './BasketItem';
+import Checkout from './Checkout';
 import '../stylesheets/basket.css';
 
 
 class Basket extends React.Component {
+  state = {
+    showCheckout: false
+  }
+
+
+
+  onCheckoutClick(){
+    this.setState({
+      showCheckout: true
+    })
+  }
 
   render(){
 
@@ -14,9 +26,14 @@ class Basket extends React.Component {
     })
 
     return(
+      <React.Fragment>
         <div className="basket">
           {products}
+          <input type="submit" value="Checkout" onClick={this.onCheckoutClick.bind(this)} />
+          { this.state.showCheckout ? <Checkout /> : null }
         </div>
+      </React.Fragment>
+
     )
   }
 }
