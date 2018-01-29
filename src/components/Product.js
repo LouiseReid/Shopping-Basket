@@ -1,4 +1,6 @@
 import React from 'react';
+import '../stylesheets/product.css';
+
 
 class Product extends React.Component {
   state = {
@@ -22,7 +24,8 @@ class Product extends React.Component {
     let price = this.props.product.price;
 
     return (
-      <div>
+      <div className="product">
+        <img src={this.props.product.image} alt={this.props.product.item}/>
         <p>{this.props.product.item}</p>
         <p>Price: {this.props.product.price}</p>
         <button onClick={this.selectProduct.bind(this, item, price)}>Add to Basket</button>

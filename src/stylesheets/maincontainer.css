@@ -1,0 +1,14 @@
+body {
+  font-family: 'Bitter', serif;
+}
+
+header {
+  text-align: center;
+  margin: 20px;
+  color: red;
+  font-size: 50px;
+  font-style: italic;
+  text-decoration: underline;
+  text-decoration-style: dashed;
+  text-decoration-color: blue;
+}

@@ -2,6 +2,8 @@ import React from 'react';
 import Product from './Product';
 import Basket from './Basket';
 import update from 'react-addons-update';
+import '../stylesheets/productlist.css';
+
 
 class ProductList extends React.Component {
   state = {
@@ -64,7 +66,7 @@ class ProductList extends React.Component {
 
     return(
       <React.Fragment>
-        <div>
+        <div className="product-list">
           {products}
         </div>
         <div>
