@@ -1,4 +1,6 @@
 import React from 'react';
+import '../stylesheets/checkout.css';
+
 
 class Checkout extends React.Component {
   state = {
@@ -7,7 +9,8 @@ class Checkout extends React.Component {
     AUD: null,
     EUR: null,
     GBP: null,
-    PLN: null
+    PLN: null,
+    basketCurrency: 'USD'
   }
 
   componentDidMount() {
@@ -22,7 +25,8 @@ class Checkout extends React.Component {
     }, function(){
       if(this.state.basketTotal === this.props.total){
         this.setState({
-          basketTotal: this.state.basketTotal * this.state.AUD
+          basketTotal: this.state.basketTotal * this.state.AUD,
+          basketCurrency: 'AUD'
         })
       }
     })
@@ -34,7 +38,8 @@ class Checkout extends React.Component {
     }, function(){
       if(this.state.basketTotal === this.props.total){
         this.setState({
-          basketTotal: this.state.basketTotal * this.state.EUR
+          basketTotal: this.state.basketTotal * this.state.EUR,
+          basketCurrency: 'EUR'
         })
       }
     })
@@ -46,7 +51,8 @@ class Checkout extends React.Component {
     }, function(){
       if(this.state.basketTotal === this.props.total){
         this.setState({
-          basketTotal: this.state.basketTotal * this.state.GBP
+          basketTotal: this.state.basketTotal * this.state.GBP,
+          basketCurrency: 'GBP'
         })
       }
     })
@@ -58,12 +64,12 @@ class Checkout extends React.Component {
     }, function(){
       if(this.state.basketTotal === this.props.total){
         this.setState({
-          basketTotal: this.state.basketTotal * this.state.PLN
+          basketTotal: this.state.basketTotal * this.state.PLN,
+          basketCurrency: 'PLN'
         })
       }
     })
   }
-
 
   resetCurrency(){
     this.setState({
@@ -71,15 +77,19 @@ class Checkout extends React.Component {
     })
   }
 
+
   render(){
     return(
       <React.Fragment>
-        <p>total: {this.state.basketTotal.toFixed(2)}</p>
-        <button onClick={this.AUDClick.bind(this)}>AUD</button>
-        <button onClick={this.EURClick.bind(this)}>EUR</button>
-        <button onClick={this.GBPClick.bind(this)}>GBP</button>
-        <button onClick={this.PLNClick.bind(this)}>PLN</button>
-        <button onClick={this.resetCurrency.bind(this)}>Reset Currency</button>
+        <p>Total: {this.state.basketTotal.toFixed(2)} {this.state.basketCurrency}</p>
+        <p>select currency:</p>
+        <div className="currency-buttons">
+          <button className="aud" onClick={this.AUDClick.bind(this)}></button>
+          <button className="eur" onClick={this.EURClick.bind(this)}></button>
+          <button className="gbp" onClick={this.GBPClick.bind(this)}></button>
+          <button className="pln" onClick={this.PLNClick.bind(this)}></button>
+        </div>
+        <button className="reset" onClick={this.resetCurrency.bind(this)}>Reset Currency</button>
       </React.Fragment>
 
     )

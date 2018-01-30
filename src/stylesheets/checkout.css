@@ -1,0 +1,31 @@
+.aud, .eur, .gbp, .pln {
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px
+}
+
+.aud {
+  background-image: url('../aud.png');
+}
+
+.eur{
+  background-image: url('../eur.png');
+}
+
+.gbp{
+  background-image: url('../gbp.png');
+}
+
+.pln{
+  background-image: url('../pln.png');
+}
+
+.reset {
+  margin-left: 10px
+}
+
+button {
+  width: 100px;
+  height: 50px
+}
